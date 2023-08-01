@@ -92,36 +92,39 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-YR-pA6" userLabel="City Label">
-                                <rect key="frame" x="164" y="486.66666666666669" width="57.333333333333343" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud" id="4rD-do-MXD">
-                                <rect key="frame" x="0.0" y="660" width="393" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemCyanColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-6r-HS2" userLabel="LocationImage StackView">
+                                <rect key="frame" x="0.0" y="476.66666666666663" width="393" height="321.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hHY-YR-pA6" userLabel="City Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="321.66666666666669"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="4rD-do-MXD">
+                                        <rect key="frame" x="0.0" y="321.66666666666669" width="393" height="0.0"/>
+                                        <color key="tintColor" systemColor="systemCyanColor"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="FQh-k1-xAH"/>
+                                    <constraint firstItem="4rD-do-MXD" firstAttribute="leading" secondItem="Cxx-6r-HS2" secondAttribute="leading" id="BfV-cL-IE6"/>
+                                    <constraint firstAttribute="bottom" secondItem="4rD-do-MXD" secondAttribute="bottom" id="kom-X0-buD"/>
+                                    <constraint firstAttribute="trailing" secondItem="4rD-do-MXD" secondAttribute="trailing" id="qeZ-EE-KIJ"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
                             <constraint firstItem="vip-RA-Jcy" firstAttribute="top" secondItem="ykz-jZ-QYg" secondAttribute="bottom" constant="41" id="1v1-Xv-Nqa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yiM-m7-3f1" secondAttribute="trailing" constant="10" id="7jQ-jH-DVB"/>
+                            <constraint firstItem="Cxx-6r-HS2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BGc-7D-9rD"/>
                             <constraint firstItem="ykz-jZ-QYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="BHV-zS-UT4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdu-jB-isF" secondAttribute="trailing" constant="40" id="C4m-w5-h3Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yiM-m7-3f1" secondAttribute="bottom" constant="709" id="CEM-B3-0UR"/>
-                            <constraint firstItem="hHY-YR-pA6" firstAttribute="top" secondItem="vip-RA-Jcy" secondAttribute="bottom" constant="30" id="Fir-jg-q1k"/>
-                            <constraint firstItem="4rD-do-MXD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HnW-qm-Wuc"/>
                             <constraint firstItem="ykz-jZ-QYg" firstAttribute="centerX" secondItem="kdu-jB-isF" secondAttribute="centerX" id="IxS-vD-4Qc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hHY-YR-pA6" secondAttribute="trailing" symbolic="YES" id="MRd-md-2gk"/>
-                            <constraint firstItem="hHY-YR-pA6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="Mxm-oh-4xW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4rD-do-MXD" secondAttribute="bottom" constant="30" id="TIl-5D-Nbc"/>
-                            <constraint firstItem="4rD-do-MXD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="V02-kQ-dkk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Cxx-6r-HS2" secondAttribute="bottom" constant="20" id="UPv-fn-rdQ"/>
                             <constraint firstItem="kdu-jB-isF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="aah-vH-bPe"/>
                             <constraint firstItem="kdu-jB-isF" firstAttribute="top" secondItem="yiM-m7-3f1" secondAttribute="bottom" constant="38" id="gtK-n7-xZy"/>
                             <constraint firstItem="vip-RA-Jcy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="388" id="h8s-ny-E8q"/>
@@ -130,6 +133,8 @@
                             <constraint firstItem="yiM-m7-3f1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="rdR-gl-6Oy"/>
                             <constraint firstItem="ykz-jZ-QYg" firstAttribute="top" relation="lessThanOrEqual" secondItem="kdu-jB-isF" secondAttribute="bottom" constant="20" id="t31-MI-XDN"/>
                             <constraint firstItem="yiM-m7-3f1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="tjb-tf-WtV"/>
+                            <constraint firstItem="Cxx-6r-HS2" firstAttribute="top" secondItem="vip-RA-Jcy" secondAttribute="bottom" constant="20" id="wXt-7i-t4h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cxx-6r-HS2" secondAttribute="trailing" id="zVO-tD-oIq"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -139,7 +144,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cloud" width="172" height="46"/>
+        <image name="Cloud" width="170.66667175292969" height="46.333332061767578"/>
         <image name="cloud.moon.bolt" catalog="system" width="122" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="123"/>
