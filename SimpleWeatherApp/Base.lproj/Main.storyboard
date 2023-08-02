@@ -78,15 +78,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FIF-8b-9OM">
                                         <rect key="frame" x="95" y="0.0" width="36" height="68.666666666666671"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8W-JR-7UN">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8W-JR-7UN">
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="F"/>
+                                                <connections>
+                                                    <action selector="onFahrenheitButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppB-uz-waI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYm-gG-atm">
                                                 <rect key="frame" x="0.0" y="34.333333333333314" width="36" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="C"/>
+                                                <connections>
+                                                    <action selector="onCelciusButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cz-si-N3w"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -137,6 +143,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cxx-6r-HS2" secondAttribute="trailing" id="zVO-tD-oIq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnCelcius" destination="zYm-gG-atm" id="BIt-zD-vCA"/>
+                        <outlet property="btnFahrenheit" destination="n8W-JR-7UN" id="XwV-dq-YSF"/>
+                        <outlet property="ivWeather" destination="ykz-jZ-QYg" id="nBq-Ft-g3i"/>
+                        <outlet property="tvCity" destination="hHY-YR-pA6" id="bDO-Je-J8F"/>
+                        <outlet property="tvTemperatue" destination="9IY-5c-baZ" id="t2V-yd-It0"/>
+                        <outlet property="tvWeatherStatus" destination="Zrt-l6-ilc" id="qGr-cm-tNS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
