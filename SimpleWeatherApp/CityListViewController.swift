@@ -19,6 +19,7 @@ class CityListViewController: UIViewController, UITableViewDataSource {
         let temperatureFahrenheit: Double
     }
     
+    //sample data
     let citiesWeatherData: [CityWeather] = [
         CityWeather(cityName: "New York", weatherCondition: "cloudy", temperatureCelsius: 25.0, temperatureFahrenheit: 77.0),
         CityWeather(cityName: "Los Angeles", weatherCondition: "sunny", temperatureCelsius: 32.5, temperatureFahrenheit: 90.5),
