@@ -7,8 +7,9 @@
 
 import UIKit
 import Foundation
+import CoreLocation
 
-class ViewController: UIViewController,UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     @IBAction func onFahrenheitButtonClicked(_ sender: UIButton) {
         if isCelciusSelected {
@@ -38,7 +39,11 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var ivSearchWeather: UIImageView!
     
+    @IBOutlet weak var locationImage: UIImageView!
+    
     @IBOutlet weak var tvCity: UILabel!
+    
+    @IBOutlet weak var currentCity: UILabel!
     
     private var isCelciusSelected = true
     
@@ -50,14 +55,61 @@ class ViewController: UIViewController,UITextFieldDelegate {
     private let API_KEY = "c86f09b7dada4f678fa34849230308"
     
     var citiesWeatherData: [CityWeather] = []
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         textFieldLocation.delegate = self
-        
+        setupLocationManager()
         initView()
     }
+    
+    func setupLocationManager() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+            // You may also consider requesting background location updates if your app needs it
+            // locationManager.requestAlwaysAuthorization()
+        }
+
+        func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+            switch status {
+                    case .authorizedWhenInUse, .authorizedAlways:
+                        // Location permission granted, you can now start updating location when needed
+                        break
+                    case .denied, .restricted:
+                        // Location permission denied or restricted, show an alert or inform the user
+                        print("Location permission denied or restricted.")
+                    case .notDetermined:
+                        // Location permission not yet determined, do nothing here
+                        break
+                    @unknown default:
+                        break
+                    }
+        }
+
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            if let location = locations.last {
+                // Use the user's current location here
+                let latitude = location.coordinate.latitude
+                let longitude = location.coordinate.longitude
+                print("Latitude: \(latitude), Longitude: \(longitude)")
+                
+                self.searchWeather(query: "\(latitude),\(longitude)")
+
+                // Stop updating location once you have the user's location
+                locationManager.stopUpdatingLocation()
+            }
+        }
+
+    private func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print("Failed to get user's location: \(error.message)")
+
+            // Stop updating location in case of an error
+            locationManager.stopUpdatingLocation()
+        }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
@@ -81,7 +133,17 @@ class ViewController: UIViewController,UITextFieldDelegate {
         // Add a tap gesture recognizer to the label
         let cityTapGesture = UITapGestureRecognizer(target: self, action: #selector(cityLabelTapped))
         tvCity.addGestureRecognizer(cityTapGesture)
+        
+        //for location image tap
+        locationImage.isUserInteractionEnabled = true
+        let locationTap = UITapGestureRecognizer(target: self, action: #selector(locationTapped))
+        locationImage.addGestureRecognizer(locationTap)
 
+    }
+    
+    @objc func locationTapped(_ gesture: UIGestureRecognizer) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @objc func handleSearchClicked(_ gesture : UITapGestureRecognizer){
@@ -178,11 +240,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
                         
                         if let location = weatherWrapper.location {
                             cityWeather.cityName = location.name
+                            DispatchQueue.main.async {
+                                self.currentCity.text = location.name
+                            }
                         }
                         //                        TODO Use handler to store data
                         if let currentWeather = weatherWrapper.current{
                             self.tempInCelcius = currentWeather.temp_c
                             self.tempInFahrenheit = currentWeather.temp_f
+                            
+                            DispatchQueue.main.async {
+                                self.tvTemperatue.text = self.isCelciusSelected ? String(self.tempInCelcius) : String(self.tempInFahrenheit)
+                            }
                             
                             cityWeather.temperatureCelsius = self.tempInCelcius
                             cityWeather.temperatureFahrenheit = self.tempInFahrenheit
@@ -236,25 +305,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
         return wrapper
     }
     
-    func weatherCompletionHandler(data : Data?,response:URLResponse?, error : Error?){
-        
-        guard error == nil else{
-            print(error!)
-            return
-        }
-        
-        guard let data = data else{
-            print("No data received")
-            return
-        }
-        
-        if let dataString = String(data: data, encoding: .utf8){
-            print(dataString)
-            print("---------")
-        }
-        
-    }
-    
     func setButtonView(){
         self.btnCelcius.tintColor = isCelciusSelected ? enabledColor: disabledColor
         self.btnFahrenheit.tintColor = !isCelciusSelected ? enabledColor: disabledColor
@@ -262,13 +312,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
-
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-        }
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
 }
