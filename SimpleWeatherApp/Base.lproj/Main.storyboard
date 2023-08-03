@@ -185,34 +185,42 @@
                                                         <constraint firstAttribute="width" constant="100" id="MWp-WS-ApN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM1-UI-e1j">
-                                                    <rect key="frame" x="130" y="33" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTB-CL-KrR">
+                                                    <rect key="frame" x="130" y="21" width="50" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yp-yX-Tb8">
-                                                    <rect key="frame" x="341" y="33" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwY-Zk-Qso">
+                                                    <rect key="frame" x="130" y="45" width="35.333333333333343" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-ez-TfK">
+                                                    <rect key="frame" x="321" y="33" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                                    <color key="textColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Plh-JE-bu7" firstAttribute="top" secondItem="0iP-j9-0Jj" secondAttribute="topMargin" constant="-1" id="2Ye-gq-OVG"/>
-                                                <constraint firstItem="eM1-UI-e1j" firstAttribute="top" secondItem="0iP-j9-0Jj" secondAttribute="topMargin" constant="22" id="JFw-9R-dzw"/>
+                                                <constraint firstItem="gTB-CL-KrR" firstAttribute="top" secondItem="0iP-j9-0Jj" secondAttribute="topMargin" constant="10" id="7UN-sX-J0p"/>
+                                                <constraint firstItem="gTB-CL-KrR" firstAttribute="leading" secondItem="Plh-JE-bu7" secondAttribute="trailing" constant="20" id="BTI-9P-PmY"/>
                                                 <constraint firstItem="Plh-JE-bu7" firstAttribute="centerY" secondItem="0iP-j9-0Jj" secondAttribute="centerY" id="P41-BC-OuM"/>
-                                                <constraint firstItem="eM1-UI-e1j" firstAttribute="baseline" secondItem="5Yp-yX-Tb8" secondAttribute="baseline" id="V2x-Tm-qri"/>
-                                                <constraint firstItem="eM1-UI-e1j" firstAttribute="firstBaseline" secondItem="5Yp-yX-Tb8" secondAttribute="firstBaseline" id="ahE-BW-Biy"/>
-                                                <constraint firstItem="eM1-UI-e1j" firstAttribute="leading" secondItem="Plh-JE-bu7" secondAttribute="trailing" constant="20" id="bmL-U2-PhY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5Yp-yX-Tb8" secondAttribute="trailing" constant="-10" id="f8i-ow-4aI"/>
-                                                <constraint firstItem="Plh-JE-bu7" firstAttribute="centerY" secondItem="eM1-UI-e1j" secondAttribute="centerY" id="iiG-Ch-nWa"/>
+                                                <constraint firstItem="bwY-Zk-Qso" firstAttribute="leading" secondItem="Plh-JE-bu7" secondAttribute="trailing" constant="20" id="igo-43-Ah2"/>
                                                 <constraint firstItem="Plh-JE-bu7" firstAttribute="leading" secondItem="0iP-j9-0Jj" secondAttribute="leadingMargin" constant="-10" id="owo-b4-GM6"/>
+                                                <constraint firstItem="bwY-Zk-Qso" firstAttribute="top" secondItem="gTB-CL-KrR" secondAttribute="bottom" id="rmD-Kl-3wz"/>
+                                                <constraint firstAttribute="trailing" secondItem="tFz-ez-TfK" secondAttribute="trailing" constant="17" id="s0H-Pa-8wZ"/>
+                                                <constraint firstItem="tFz-ez-TfK" firstAttribute="top" secondItem="0iP-j9-0Jj" secondAttribute="top" constant="33" id="tgm-eA-hAf"/>
+                                                <constraint firstAttribute="bottom" secondItem="tFz-ez-TfK" secondAttribute="bottom" constant="32" id="ySV-jo-awy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cityNameLabel" destination="eM1-UI-e1j" id="RD4-gP-L64"/>
-                                            <outlet property="temperatureLabel" destination="5Yp-yX-Tb8" id="9uy-L6-kI3"/>
+                                            <outlet property="cityNameLabel" destination="gTB-CL-KrR" id="kws-m6-ANx"/>
+                                            <outlet property="temperatureLabel" destination="tFz-ez-TfK" id="B45-KM-bpk"/>
+                                            <outlet property="weatherCondition" destination="bwY-Zk-Qso" id="kgi-hY-SRe"/>
                                             <outlet property="weatherIconImageView" destination="Plh-JE-bu7" id="3is-vv-VnD"/>
                                         </connections>
                                     </tableViewCell>

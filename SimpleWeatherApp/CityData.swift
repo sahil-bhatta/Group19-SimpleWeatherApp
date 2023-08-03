@@ -12,6 +12,14 @@ struct CityData: Decodable {
     let region: String
     let country: String
     let lat: Double
-    let long: Double
+    let lon: Double
     let url: String
+}
+
+struct CityWeather: Equatable {
+    var cityName: String
+    var weatherCondition: String
+    var temperatureCelsius: Double
+    var temperatureFahrenheit: Double
+    var image: String
 }

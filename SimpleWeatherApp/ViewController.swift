@@ -47,6 +47,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
     private var tempInCelcius = 0.0
     private var tempInFahrenheit = 0.0
     
+    private let API_KEY = "c86f09b7dada4f678fa34849230308"
+    
+    var citiesWeatherData: [CityWeather] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,7 +61,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
-        searchWeather(locationQuery: textField.text)
+        searchCity(textField.text)
         return true
     }
     
@@ -85,7 +89,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         print("Search Triggered")
         if let _ = gesture.view as? UIImageView {
             
-        searchWeather(locationQuery: textFieldLocation.text)
+//        searchWeather(query: textFieldLocation.text)
+        searchCity(textFieldLocation.text)
         }
     }
     
@@ -95,53 +100,139 @@ class ViewController: UIViewController,UITextFieldDelegate {
         performSegue(withIdentifier: "showList", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showList" {
+            if let destinationViewController = segue.destination as? CityListViewController {
+                destinationViewController.citiesWeatherData = self.citiesWeatherData
+            }
+        }
+    }
+    
     func toggleWeather(){
         setButtonView()
     }
     
-    func searchWeather(locationQuery : String?){
-        print("Searching ...")
-        let key = "c86f09b7dada4f678fa34849230308&"
-        if let location = locationQuery{
+    //function to search location based on the query
+    func searchCity(_ query: String?) {
+        
+        if let location = query {
             print(location)
-            let urlString = "https://api.weatherapi.com/v1/search.json?key=\(key)&q=\(location)"
+            
+            let urlString = "https://api.weatherapi.com/v1/search.json?key=\(API_KEY)&q=\(location)"
             let url = URL(string: urlString)
             //            TODO Add header with apiKey
             let urlSession = URLSession(configuration: .default)
             if let url = url {
                 let dataTask = urlSession.dataTask(with: url){
-                data,response,error in
-                guard error == nil else{
-                    print(error)
-                    return
-                }
-                    guard let data = data else{
-                                print("No data received")
-                                return
-                            }
-                    if let weatherwrapper = self.parseJson(data: data){
-                        //                        TODO Use handler to store data
-                        if let currentWeather = weatherwrapper.current{
-                            self.tempInCelcius = currentWeather.temp_c
-                            self.tempInFahrenheit = currentWeather.temp_f
-                                print("Code is \(currentWeather.condition.code)")
+                    data,response,error in
+                    guard error == nil else{
+                        print(error)
+                        return
                     }
-                            }
-            }
+                    guard let data = data else{
+                        print("No data received")
+                        return
+                    }
+                    let cityWrapper = self.parseLocationJson(data: data)
+                    print(cityWrapper)
+                    
+                    //once the location data is received, I used its lat lon to find the current weather
+                    for city in cityWrapper {
+                        if let city = city {
+                            self.searchWeather(query: "\(city.lat),\(city.lon)")
+                        }
+                    }
+                    
+                }
                 dataTask.resume()
-        }
+            }
         }
     }
     
-    func parseJson(data: Data) -> WeatherData? {
+    //function to search weather based on location or lat lon
+    func searchWeather(query : String?){
+        print("Searching ...")
+        
+        if let query = query {
+            print(query)
+            
+            let urlString = "https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=\(query)"
+            let url = URL(string: urlString)
+            
+            let urlSession = URLSession(configuration: .default)
+            if let url = url {
+                let dataTask = urlSession.dataTask(with: url) {
+                    data,response,error in
+                    guard error == nil else{
+                        print(error)
+                        return
+                    }
+                    guard let data = data else{
+                        print("No data received")
+                        return
+                    }
+                    if let weatherWrapper = self.parseWeatherJson(data: data) {
+                        
+                        print(weatherWrapper)
+                        var cityWeather = CityWeather(cityName: "", weatherCondition: "", temperatureCelsius: 0.0, temperatureFahrenheit: 0.0, image: "")
+                        
+                        if let location = weatherWrapper.location {
+                            cityWeather.cityName = location.name
+                        }
+                        //                        TODO Use handler to store data
+                        if let currentWeather = weatherWrapper.current{
+                            self.tempInCelcius = currentWeather.temp_c
+                            self.tempInFahrenheit = currentWeather.temp_f
+                            
+                            cityWeather.temperatureCelsius = self.tempInCelcius
+                            cityWeather.temperatureFahrenheit = self.tempInFahrenheit
+                            
+                            if let condition = currentWeather.condition {
+                                print("Code is \(condition.code)")
+                                
+                                
+                                cityWeather.weatherCondition = condition.text
+                                cityWeather.image = condition.icon
+                            }
+                            
+                        }
+                        if !self.citiesWeatherData.contains(cityWeather) {
+                            self.citiesWeatherData.append(cityWeather)
+                        } else {
+                            print("Location \(cityWeather.cityName) is already in the list")
+                        }
+                            
+                        print(self.citiesWeatherData.count)
+                    }
+                }
+                dataTask.resume()
+            }
+        }
+        
+    }
+    
+    func parseWeatherJson(data: Data) -> WeatherData? {
         let decoder = JSONDecoder()
         var wrapper : WeatherData?
-        print(data)
+        
         do{
         wrapper = try decoder.decode(WeatherData.self, from: data)
         } catch {
             print("muji \(error)")
         }
+        return wrapper
+    }
+    
+    func parseLocationJson(data: Data) -> [CityData?] {
+        let decoder = JSONDecoder()
+        var wrapper: [CityData?] = []
+        
+        do {
+            wrapper = try decoder.decode([CityData].self, from: data)
+        } catch {
+            print("muji \(error)")
+        }
+        
         return wrapper
     }
     

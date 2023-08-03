@@ -30,7 +30,7 @@ struct CurrentLocation : Decodable{
     let temp_c : Double
     let temp_f : Double
     let is_day : Int
-    let condition : Condition
+    let condition : Condition?
     let wind_mph : Double
     let wind_kph : Double
     let wind_degree : Int
@@ -48,7 +48,7 @@ struct CurrentLocation : Decodable{
     let uv : Double
     let gust_mph : Double
     let gust_kph : Double
-    let air_quality : AirQuality
+    let air_quality : AirQuality?
     
 }
 
