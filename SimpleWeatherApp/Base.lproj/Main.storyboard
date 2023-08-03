@@ -146,7 +146,9 @@
                     <connections>
                         <outlet property="btnCelcius" destination="zYm-gG-atm" id="BIt-zD-vCA"/>
                         <outlet property="btnFahrenheit" destination="n8W-JR-7UN" id="XwV-dq-YSF"/>
+                        <outlet property="ivSearchWeather" destination="L5Q-G0-Cqs" id="F5m-qn-wTp"/>
                         <outlet property="ivWeather" destination="ykz-jZ-QYg" id="nBq-Ft-g3i"/>
+                        <outlet property="textFieldLocation" destination="n85-oJ-2qz" id="z5r-ce-jzU"/>
                         <outlet property="tvCity" destination="hHY-YR-pA6" id="bDO-Je-J8F"/>
                         <outlet property="tvTemperatue" destination="9IY-5c-baZ" id="t2V-yd-It0"/>
                         <outlet property="tvWeatherStatus" destination="Zrt-l6-ilc" id="qGr-cm-tNS"/>
