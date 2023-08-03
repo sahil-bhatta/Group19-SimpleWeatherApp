@@ -13,6 +13,8 @@
 		08354B7A2A7341B80025C601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08354B782A7341B80025C601 /* Main.storyboard */; };
 		08354B7C2A7341B90025C601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08354B7B2A7341B90025C601 /* Assets.xcassets */; };
 		08354B7F2A7341B90025C601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08354B7D2A7341B90025C601 /* LaunchScreen.storyboard */; };
+		B56AF7FD2A7B3FEF0045C5F6 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AF7FC2A7B3FEF0045C5F6 /* CityTableViewCell.swift */; };
+		B56AF7FF2A7B40720045C5F6 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AF7FE2A7B40720045C5F6 /* CityListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		08354B7B2A7341B90025C601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08354B7E2A7341B90025C601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08354B802A7341B90025C601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56AF7FC2A7B3FEF0045C5F6 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		B56AF7FE2A7B40720045C5F6 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				08354B7B2A7341B90025C601 /* Assets.xcassets */,
 				08354B7D2A7341B90025C601 /* LaunchScreen.storyboard */,
 				08354B802A7341B90025C601 /* Info.plist */,
+				B56AF7FC2A7B3FEF0045C5F6 /* CityTableViewCell.swift */,
+				B56AF7FE2A7B40720045C5F6 /* CityListViewController.swift */,
 			);
 			path = SimpleWeatherApp;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			files = (
 				08354B772A7341B80025C601 /* ViewController.swift in Sources */,
 				08354B732A7341B80025C601 /* AppDelegate.swift in Sources */,
+				B56AF7FD2A7B3FEF0045C5F6 /* CityTableViewCell.swift in Sources */,
+				B56AF7FF2A7B40720045C5F6 /* CityListViewController.swift in Sources */,
 				08354B752A7341B80025C601 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

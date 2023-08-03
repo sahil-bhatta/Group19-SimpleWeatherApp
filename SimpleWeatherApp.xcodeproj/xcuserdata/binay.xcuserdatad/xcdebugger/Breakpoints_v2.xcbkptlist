@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5436BB31-02C4-42E3-B6A5-901CB4499F0E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03482247-30A7-4819-AB22-BAFA5F3DE444"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/CityListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C4C4D6D-71F9-4CE3-A6E2-EC4A77BCA8F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "searchWeather(locationQuery:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9C4C4D6D-71F9-4CE3-A6E2-EC4A77BCA8F2 - e21992f696e1cca1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.searchWeather(locationQuery: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1252">
+               </Location>
+               <Location
+                  uuid = "9C4C4D6D-71F9-4CE3-A6E2-EC4A77BCA8F2 - e21992f696e1cca1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.searchWeather(locationQuery: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95227CA0-F998-4EA5-BCA5-AA0C043A4E87"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "handleSearchClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "95227CA0-F998-4EA5-BCA5-AA0C043A4E87 - 6eab545983f49ca6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.handleSearchClicked(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "844">
+               </Location>
+               <Location
+                  uuid = "95227CA0-F998-4EA5-BCA5-AA0C043A4E87 - 6eab545983f49ca6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.handleSearchClicked(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE4FD6FF-7A05-471D-8B3E-56A9ED7090E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "handleSearchClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FE4FD6FF-7A05-471D-8B3E-56A9ED7090E1 - 6eab545983f49c45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.handleSearchClicked(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "FE4FD6FF-7A05-471D-8B3E-56A9ED7090E1 - 6eab545983f49c45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.handleSearchClicked(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8F4D3F2-624D-41B9-91DF-F11E09CB7B0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "initView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D8F4D3F2-624D-41B9-91DF-F11E09CB7B0A - 17d91355630592d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.initView() -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "960">
+               </Location>
+               <Location
+                  uuid = "D8F4D3F2-624D-41B9-91DF-F11E09CB7B0A - 17d91355630592f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.initView() -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "964">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBC8057A-F89C-42CF-A0CE-0FBFAA22275F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "initView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DBC8057A-F89C-42CF-A0CE-0FBFAA22275F - 17d9135563059244"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.initView() -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "756">
+               </Location>
+               <Location
+                  uuid = "DBC8057A-F89C-42CF-A0CE-0FBFAA22275F - 17d9135563059244"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.initView() -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "860">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E051BD39-CB1B-4B2D-8865-0B951ADE695F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeatherApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "searchWeather(locationQuery:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E051BD39-CB1B-4B2D-8865-0B951ADE695F - e21992f696e1c822"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.searchWeather(locationQuery: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "1948">
+               </Location>
+               <Location
+                  uuid = "E051BD39-CB1B-4B2D-8865-0B951ADE695F - e21992f696e1c8a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleWeatherApp.ViewController.searchWeather(locationQuery: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleWeatherApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binay/Documents/College/Group19-SimpleWeatherApp/SimpleWeatherApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "2200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
