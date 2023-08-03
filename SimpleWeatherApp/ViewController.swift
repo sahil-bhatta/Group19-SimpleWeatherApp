@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBAction func onFahrenheitButtonClicked(_ sender: UIButton) {
         if isCelciusSelected {
@@ -53,7 +53,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        textFieldLocation.delegate = self
         initView()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        searchWeather(locationQuery: textField.text)
+        return true
     }
     
     func initView(){
@@ -68,11 +75,12 @@ class ViewController: UIViewController {
     }
     
     @objc func handleSearchClicked(_ gesture : UITapGestureRecognizer){
+//        TODO Verify triggering on action
         print("Search Triggered")
         if let _ = gesture.view as? UIImageView {
             
             searchWeather(locationQuery: textFieldLocation.text)
-              }
+        }
     }
     
     func toggleWeather(){
@@ -99,10 +107,12 @@ class ViewController: UIViewController {
                                 return
                             }
                     if let weatherwrapper = self.parseJson(data: data){
-//                        TODO Use handler to store data
-                        self.tempInCelcius = weatherwrapper.current.temp_c
-                        self.tempInFahrenheit = weatherwrapper.current.temp_f
-                                print("Code is \(weatherwrapper.current.condition.code)")
+                        //                        TODO Use handler to store data
+                        if let currentWeather = weatherwrapper.current{
+                            self.tempInCelcius = currentWeather.temp_c
+                            self.tempInFahrenheit = currentWeather.temp_f
+                                print("Code is \(currentWeather.condition.code)")
+                    }
                             }
             }
                 dataTask.resume()
@@ -111,8 +121,9 @@ class ViewController: UIViewController {
     }
     
     struct WeatherWrapper : Decodable{
-        let location : Location
-        let current : CurrentLocation
+        let location : Location?
+        let error: Error?
+        let current : CurrentLocation?
     }
     
     struct Location : Decodable{
@@ -171,6 +182,11 @@ class ViewController: UIViewController {
 //        let gb-defra-index : Int
     }
     
+    struct Error : Decodable{
+        let code : Int
+        let message : String
+    }
+    
     func parseJson(data: Data)->WeatherWrapper?{
         let decoder = JSONDecoder()
         var wrapper : WeatherWrapper?
@@ -197,6 +213,7 @@ class ViewController: UIViewController {
         
         if let dataString = String(data: data, encoding: .utf8){
             print(dataString)
+            print("---------")
         }
         
     }
