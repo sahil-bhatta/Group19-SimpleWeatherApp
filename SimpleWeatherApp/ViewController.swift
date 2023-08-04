@@ -262,7 +262,9 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             
                             if let condition = currentWeather.condition {
                                 if let conditionCode = condition.code{
-                                    self.showSymbolImage(conditionCode: conditionCode)
+                                    DispatchQueue.main.async {
+                                        self.ivWeather.image = UIImage(systemName: self.showSymbolImage(conditionCode: conditionCode))
+                                    }
                                 }
                                 
                                 cityWeather.weatherCondition = condition.text
@@ -326,7 +328,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func showSymbolImage(conditionCode : Int){
+    func showSymbolImage(conditionCode : Int) -> String{
         let systemNameOfSymbol : String
         switch conditionCode {
 //                                        Sunny
@@ -471,7 +473,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         default:
             systemNameOfSymbol = "sun.min"
         }
-        self.ivWeather.image = UIImage(systemName: systemNameOfSymbol)
+        return systemNameOfSymbol
+        
     }
 
 }
