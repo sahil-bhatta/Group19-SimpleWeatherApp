@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     private var isCelciusSelected = true
     
     private let enabledColor = UIColor.blue
-    private let disabledColor = UIColor.tintColor
+    private let disabledColor = UIColor.secondaryLabel
     private var tempInCelcius = 0.0
     private var tempInFahrenheit = 0.0
     
@@ -170,11 +170,13 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         if segue.identifier == "showList" {
             if let destinationViewController = segue.destination as? CityListViewController {
                 destinationViewController.citiesWeatherData = self.citiesWeatherData
+                destinationViewController.isCelciusSelected = self.isCelciusSelected
             }
         }
     }
     
     func toggleWeather(){
+        self.tvTemperatue.text = self.isCelciusSelected ? String(self.tempInCelcius) : String(self.tempInFahrenheit)
         setButtonView()
     }
     

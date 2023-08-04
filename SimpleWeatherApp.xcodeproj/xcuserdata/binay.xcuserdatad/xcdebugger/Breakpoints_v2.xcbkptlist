@@ -14,8 +14,8 @@
             filePath = "SimpleWeatherApp/CityListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -80,7 +80,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "handleSearchClicked(_:)"
+            landmarkName = "locationTapped(_:)"
             landmarkType = "7">
             <Locations>
                <Location

@@ -11,6 +11,7 @@ class CityListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var citiesWeatherData: [CityWeather] = []
+    var isCelciusSelected = true
     
     //sample data
     /*let citiesWeatherData: [CityWeather] = [
@@ -42,7 +43,8 @@ class CityListViewController: UIViewController, UITableViewDataSource {
         // Configure the cell with the data
         cell.cityNameLabel.text = cityWeather.cityName
         cell.weatherCondition.text = cityWeather.weatherCondition
-        cell.temperatureLabel.text = "\(cityWeather.temperatureCelsius)°C" // Or use cityWeather.temperatureFahrenheit if
+        cell.temperatureLabel.text = self.isCelciusSelected ? "\(cityWeather.temperatureCelsius)°C" : "\(cityWeather.temperatureFahrenheit)°F"
+    
         loadImageFromURL("https:\(cityWeather.image)", cell)
 
         return cell
