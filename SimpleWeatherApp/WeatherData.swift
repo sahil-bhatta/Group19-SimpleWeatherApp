@@ -55,7 +55,7 @@ struct CurrentLocation : Decodable{
 struct Condition : Decodable{
     let text : String
     let icon : String
-    let code : Int
+    let code : Int?
 }
 
 struct AirQuality : Decodable{

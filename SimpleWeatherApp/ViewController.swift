@@ -138,6 +138,10 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         locationImage.isUserInteractionEnabled = true
         let locationTap = UITapGestureRecognizer(target: self, action: #selector(locationTapped))
         locationImage.addGestureRecognizer(locationTap)
+        
+//        Sets config colors for SF symbols
+        let config = UIImage.SymbolConfiguration(paletteColors: [.blue,.yellow])
+        self.ivWeather.preferredSymbolConfiguration = config
 
     }
     
@@ -257,8 +261,159 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             cityWeather.temperatureFahrenheit = self.tempInFahrenheit
                             
                             if let condition = currentWeather.condition {
-                                print("Code is \(condition.code)")
+                              
+                                if let conditionCode = condition.code{
+                                    print("Code is \(conditionCode)")
+                                    let systemNameOfSymbol : String
+                                    switch conditionCode {
+//                                        Sunny
+                                    case 1000:
+                                        systemNameOfSymbol = "sun.max.fill"
+//                                        Partly Cloudy
+                                    case 1003:
+                                        systemNameOfSymbol = "cloud.sun"
+//                                        Cloudy
+                                    case 1006:
+                                        systemNameOfSymbol = "cloud"
+//                                        Overcast
+                                    case 1009:
+                                        systemNameOfSymbol = "cloud.fill"
+//                                        Mist
+                                    case 1030:
+                                        systemNameOfSymbol = "water.waves"
+//                                        Patchy rain
+                                    case 1063:
+                                        systemNameOfSymbol = "cloud.sun.rain"
+//                                        Patchy snow
+                                    case 1066:
+                                        systemNameOfSymbol = "cloud.snow"
+//                                        Patchy sleet
+                                    case 1069:
+                                        systemNameOfSymbol = "cloud.sleet"
+//                                        Freezing drizzle
+                                    case 1072:
+                                        systemNameOfSymbol = "cloud.drizzle.fill"
+//                                        Thundery outbreaks possible
+                                    case 1087:
+                                        systemNameOfSymbol = "cloud.sun.bolt"
+//                                        Blowing snow
+                                    case 1114:
+                                        systemNameOfSymbol = "wind.snow.circle.fill"
+//                                        Blizzard
+                                    case 1117:
+                                        systemNameOfSymbol = "wind.snow.circle"
+//                                        Fog
+                                    case 1135:
+                                        systemNameOfSymbol = "cloud.fog"
+//                                        Freezing Fog
+                                    case 1147:
+                                        systemNameOfSymbol = "cloud.fog.fill"
+//                                       Patchy Light drizzle
+                                    case 1150:
+                                        systemNameOfSymbol = "cloud.sun.rain"
+//                                        Light drizzle
+                                    case 1153:
+                                        systemNameOfSymbol = "cloud.sun.rain"
+//                                        Freezing drizzle
+                                    case 1168:
+                                        systemNameOfSymbol = "cloud.rain"
+                                    case 1171:
+                                        systemNameOfSymbol = "cloud.rain.fill"
+//                                        Patchy Light rain
+                                    case 1180:
+                                        systemNameOfSymbol = "cloud.sun.rain"
+//                                        Light rain
+                                    case 1183:
+                                        systemNameOfSymbol = "cloud.sun.rain.fill"
+//                                        Moderate rain at times
+                                    case 1186:
+                                        systemNameOfSymbol = "cloud.bolt.rain"
+//                                        Moderate rain
+                                    case 1189:
+                                        systemNameOfSymbol = "cloud.bolt.rain"
+//                                        Heavy rain at times
+                                    case 1192:
+                                        systemNameOfSymbol = "cloud.heavyrain"
+//                                        Heavy rain
+                                    case 1195:
+                                        systemNameOfSymbol = "cloud.heavyrain.fill"
+//                                        Light freezing rain
+                                    case 1198:
+                                        systemNameOfSymbol = "cloud.moon.rain"
+//                                        Moderate or heavy freezing rain
+                                    case 1201:
+                                        systemNameOfSymbol = "cloud.moon.rain.fill"
+//                                        Light sleet
+                                    case 1204:
+                                        systemNameOfSymbol = "cloud.sleet"
+//                                        Moderate or heavy sleet
+                                    case 1207:
+                                        systemNameOfSymbol = "cloud.sleet.fill"
+//                                        Patchy light snow
+                                    case 1210:
+                                        systemNameOfSymbol = "cloud.snow"
+//                                        Light snow
+                                    case 1213:
+                                        systemNameOfSymbol = "cloud.snow.fill"
+//                                        Patchy moderate snow
+                                    case 1216:
+                                        systemNameOfSymbol = "cloud.snow.circle"
+//                                        Moderate snow
+                                    case 1219:
+                                        systemNameOfSymbol = "cloud.snow.circle.fill"
+//                                        Patchy heavy snow
+                                    case 1222:
+                                        systemNameOfSymbol = "wind.snow"
+//                                        Heavy snow
+                                    case 1225:
+                                        systemNameOfSymbol = "wind.snow.circle.fill"
+//                                        Ice Palette
+                                    case 1237:
+                                        systemNameOfSymbol = "snowflake"
+//                                        Light rain shower
+                                    case 1240:
+                                        systemNameOfSymbol = "cloud.rain"
+//                                        Moderate or heavy rain shower
+                                    case 1243:
+                                        systemNameOfSymbol = "cloud.bolt.rain"
+//                                        Torrential rain shower
+                                    case 1246:
+                                        systemNameOfSymbol = "cloud.bolt.rain.fill"
+//                                        Light sleet showers
+                                    case 1249:
+                                        systemNameOfSymbol = "cloud.sleet"
+//                                        Moderate or heavy sleet showers
+                                    case 1252:
+                                        systemNameOfSymbol = "cloud.sleet.fill"
+//                                        Light snow showers
+                                    case 1255:
+                                        systemNameOfSymbol = "cloud.snow"
+//                                       Moderate or heavy snow showers
+                                    case 1258:
+                                        systemNameOfSymbol = "wind.snow.fill"
+//                                        Light showers of ice pellets
+                                    case 1261:
+                                        systemNameOfSymbol = "cloud.snow"
+//                                        Moderate or heavy showers of ice pellets
+                                    case 1264:
+                                        systemNameOfSymbol = "cloud.snow.fill"
+//                                        Patchy light rain with thunder
+                                    case 1273:
+                                        systemNameOfSymbol = "cloud.bolt.rain"
+//                                        Moderate or heavy rain with thunder
+                                    case 1276:
+                                        systemNameOfSymbol = "cloud.bolt.rain.fill"
+                                    case 1279:
+                                        systemNameOfSymbol = "cloud.bolt.rain.fill"
+                                    default:
+                                        systemNameOfSymbol = "sun.min"
+                                    }
+                                    self.showSymbolImage(systemImageName: systemNameOfSymbol)
+                                }
                                 
+                               
+                                
+                            
                                 
                                 cityWeather.weatherCondition = condition.text
                                 cityWeather.image = condition.icon
@@ -287,7 +442,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         do{
         wrapper = try decoder.decode(WeatherData.self, from: data)
         } catch {
-            print("muji \(error)")
+            print("Error in weather decoding \(error)")
         }
         return wrapper
     }
@@ -299,7 +454,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         do {
             wrapper = try decoder.decode([CityData].self, from: data)
         } catch {
-            print("muji \(error)")
+            print("Error in location decoding \(error)")
         }
         
         return wrapper
@@ -319,6 +474,10 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func showSymbolImage(systemImageName : String){
+        self.ivWeather.image = UIImage(systemName: systemImageName)
     }
 
 }

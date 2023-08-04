@@ -60,8 +60,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.moon.bolt" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ykz-jZ-QYg" userLabel="Image Weather">
-                                <rect key="frame" x="75.999999999999986" y="217.66666666666663" width="241.66666666666669" height="131.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ykz-jZ-QYg" userLabel="Image Weather">
+                                <rect key="frame" x="76" y="219" width="241" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="GoW-us-NSE"/>
                                 </constraints>
@@ -101,12 +101,12 @@
                             <stackView opaque="NO" contentMode="top" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-6r-HS2" userLabel="LocationImage StackView">
                                 <rect key="frame" x="222.33333333333337" y="476.66666666666669" width="170.66666666666663" height="46.333333333333314"/>
                             </stackView>
-                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="j8r-R2-lwq">
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="j8r-R2-lwq">
                                 <rect key="frame" x="16" y="701" width="361" height="46.333333333333371"/>
                                 <color key="backgroundColor" red="0.46274509800000002" green="0.83921568629999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enD-ag-NFN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enD-ag-NFN">
                                 <rect key="frame" x="36" y="527" width="321" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" rowHeight="86" id="vqj-zP-hkI" customClass="CityTableViewCell" customModule="weather" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" rowHeight="86" id="vqj-zP-hkI" customClass="CityTableViewCell" customModule="SimpleWeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vqj-zP-hkI" id="0iP-j9-0Jj">
@@ -267,7 +267,6 @@
     </scenes>
     <resources>
         <image name="Cloud" width="170.66667175292969" height="46.333332061767578"/>
-        <image name="cloud.moon.bolt" catalog="system" width="122" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
