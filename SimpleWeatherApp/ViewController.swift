@@ -248,7 +248,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                                 self.currentCity.text = location.name
                             }
                         }
-                        //                        TODO Use handler to store data
                         if let currentWeather = weatherWrapper.current{
                             self.tempInCelcius = currentWeather.temp_c
                             self.tempInFahrenheit = currentWeather.temp_f
@@ -261,6 +260,9 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             cityWeather.temperatureFahrenheit = self.tempInFahrenheit
                             
                             if let condition = currentWeather.condition {
+                                DispatchQueue.main.async{
+                                    self.tvWeatherStatus.text = condition.text
+                                }
                                 if let conditionCode = condition.code{
                                     DispatchQueue.main.async {
                                         self.ivWeather.image = UIImage(systemName: self.showSymbolImage(conditionCode: conditionCode))
