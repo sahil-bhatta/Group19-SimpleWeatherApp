@@ -58,7 +58,7 @@ class CityListViewController: UIViewController, UITableViewDataSource {
             }
 
             URLSession.shared.dataTask(with: imageUrl) { [weak self] data, _, error in
-                guard let self = self else { return }
+                guard self != nil else { return }
 
                 if let error = error {
                     print("Error downloading image: \(error)")

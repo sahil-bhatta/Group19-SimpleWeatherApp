@@ -45,6 +45,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     
     @IBOutlet weak var currentCity: UILabel!
     
+    @IBOutlet weak var ivBottomWeather: UIImageView!
+    
     private var isCelciusSelected = true
     
     private let enabledColor = UIColor.blue
@@ -118,6 +120,9 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
     
     func initView(){
+        let image = UIImage(named: "cloud")?.withTintColor( .black, renderingMode: .alwaysTemplate)
+        ivWeather.image = image
+        
         self.btnFahrenheit.tintColor = disabledColor
         toggleWeather()
         tvTemperatue.text = isCelciusSelected ? String(tempInCelcius) : String(tempInFahrenheit)
@@ -194,7 +199,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                 let dataTask = urlSession.dataTask(with: url){
                     data,response,error in
                     guard error == nil else{
-                        print(error)
+                        print(error!)
                         return
                     }
                     guard let data = data else{
@@ -232,7 +237,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                 let dataTask = urlSession.dataTask(with: url) {
                     data,response,error in
                     guard error == nil else{
-                        print(error)
+                        print(error!)
                         return
                     }
                     guard let data = data else{
