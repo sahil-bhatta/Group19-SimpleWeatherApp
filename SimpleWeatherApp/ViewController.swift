@@ -120,9 +120,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
     
     func initView(){
-        let image = UIImage(named: "cloud")?.withTintColor( .black, renderingMode: .alwaysTemplate)
-        ivWeather.image = image
-        
         self.btnFahrenheit.tintColor = disabledColor
         toggleWeather()
         tvTemperatue.text = isCelciusSelected ? String(tempInCelcius) : String(tempInFahrenheit)
@@ -278,14 +275,17 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                                 DispatchQueue.main.async{
                                     self.tvWeatherStatus.text = condition.text
                                 }
+                                
                                 if let conditionCode = condition.code{
+                                    let imageSystemName = self.showSymbolImage(conditionCode: conditionCode)
+                                    cityWeather.weatherCondition = condition.text
+                                    cityWeather.image = imageSystemName
+                                    
                                     DispatchQueue.main.async {
-                                        self.ivWeather.image = UIImage(systemName: self.showSymbolImage(conditionCode: conditionCode))
+                                        self.ivWeather.image = UIImage(systemName: imageSystemName)
                                     }
                                 }
-                                
-                                cityWeather.weatherCondition = condition.text
-                                cityWeather.image = condition.icon
+                              
                             }
                             
                         }

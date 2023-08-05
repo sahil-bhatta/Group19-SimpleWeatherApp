@@ -13,6 +13,8 @@ class CityListViewController: UIViewController, UITableViewDataSource {
     var citiesWeatherData: [CityWeather] = []
     var isCelciusSelected = true
     
+    let config = UIImage.SymbolConfiguration(paletteColors: [.blue,.yellow])
+    
     //sample data
     /*let citiesWeatherData: [CityWeather] = [
         CityWeather(cityName: "New York", weatherCondition: "cloudy", temperatureCelsius: 25.0, temperatureFahrenheit: 77.0),
@@ -45,34 +47,11 @@ class CityListViewController: UIViewController, UITableViewDataSource {
         cell.weatherCondition.text = cityWeather.weatherCondition
         cell.temperatureLabel.text = self.isCelciusSelected ? "\(cityWeather.temperatureCelsius)°C" : "\(cityWeather.temperatureFahrenheit)°F"
     
-        loadImageFromURL("https:\(cityWeather.image)", cell)
+        cell.weatherIconImageView.preferredSymbolConfiguration = self.config
+        cell.weatherIconImageView.image = UIImage(systemName: cityWeather.image)
 
         return cell
     }
-    
-    func loadImageFromURL(_ imageUrlString: String, _ cell: CityTableViewCell) {
-
-            guard let imageUrl = URL(string: imageUrlString) else {
-                print("Invalid URL")
-                return
-            }
-
-            URLSession.shared.dataTask(with: imageUrl) { [weak self] data, _, error in
-                guard self != nil else { return }
-
-                if let error = error {
-                    print("Error downloading image: \(error)")
-                    return
-                }
-
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        // Set the image to the UIImageView
-                        cell.weatherIconImageView.image = image
-                    }
-                }
-            }.resume()
-        }
 
     
     override func viewWillAppear(_ animated: Bool) {
