@@ -122,7 +122,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     func initView(){
         self.btnFahrenheit.tintColor = disabledColor
         toggleWeather()
-        tvTemperatue.text = isCelciusSelected ? String(tempInCelcius) : String(tempInFahrenheit)
         
         ivSearchWeather.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSearchClicked))
