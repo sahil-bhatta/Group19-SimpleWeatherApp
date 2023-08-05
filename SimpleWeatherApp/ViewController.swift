@@ -184,6 +184,10 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     
     //function to search location based on the query
     func searchCity(_ query: String?) {
+        guard query == nil else{
+            print("Empty query")
+            return
+        }
         
         if let location = query {
             print(location)
