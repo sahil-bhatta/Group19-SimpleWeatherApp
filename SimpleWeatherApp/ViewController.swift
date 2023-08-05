@@ -192,12 +192,20 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
             print(location)
             
             let urlString = "https://api.weatherapi.com/v1/search.json?key=\(API_KEY)&q=\(location)"
-            let url = URL(string: urlString)
-            //            TODO Add header with apiKey
+            print(urlString)
+            let urlStringWithPercentage = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            guard let urlStringWithPercentage = urlStringWithPercentage else{
+                print("Error in getting url")
+                return
+            }
+            
+            let url = URL(string: urlStringWithPercentage)
+           
             let urlSession = URLSession(configuration: .default)
             if let url = url {
                 let dataTask = urlSession.dataTask(with: url){
                     data,response,error in
+                   
                     guard error == nil else{
                         print(error!)
                         return
