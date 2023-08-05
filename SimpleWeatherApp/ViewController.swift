@@ -184,7 +184,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     
     //function to search location based on the query
     func searchCity(_ query: String?) {
-        guard query == nil else{
+        guard let city = query, !city.isEmpty else{
             print("Empty query")
             return
         }
@@ -287,6 +287,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                                     
                                     DispatchQueue.main.async {
                                         self.ivWeather.image = UIImage(systemName: imageSystemName)
+                                        self.textFieldLocation.text = ""
                                     }
                                 }
                               
